@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="#" />
+    <link
+      rel="preload"
+      href="../../static/font/HYWH-65W.woff"
+      as="font"
+      type="font/woff"
+    />
+    <link
+      rel="preload"
+      href="../../static/font/NZBZ.woff"
+      as="font"
+      type="font/woff"
+    />
+    <link
+      rel="preload"
+      href="../../static/font/tttgbnumber.woff"
+      as="font"
+      type="font/woff"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../static/css/character/common.css"
+    />
+    <title>数据获取</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../static/css/character/detail.css"
+    />
+  </head>
+
+  <body
+    class="elem-quantum profile-mode char-阮•梅"
+    style="transform: scale(1.6)"
+  >
+    <div class="container elem-bg" id="container">
+      <div class="profile-cont game-sr">
+        <div class="basic">
+          <div
+            class="main-pic"
+            style="background-image: url('{{hsrUrl}}{{character.portrait}}')"
+          ></div>
+          <div class="detail">
+            <div class="detail-top">
+              <div class="char-name">{{character.name}}</div>
+              <div class="char-lv">
+                {{player.nickname}} UID {{player.uid}} - Lv.{{character.level}}
+                <span class="cons cons-1">{{character.rank}}命</span>
+              </div>
+            </div>
+
+            <div class="detail-bottom">
+              <ul class="char-attr">
+                {{each filterCharacter}}
+                <li>
+                  <div class="icon"><i class="i-hp"></i></div>
+
+                  <div class="title">{{$value.name}}</div>
+                  <div class="weight">
+                    <!-- <span class="normal">75</span> -->
+                  </div>
+                  <div class="value">{{$value.sum}}</div>
+                  <div class="value2">
+                    <span class="base"> {{$value.attribute}}</span>
+                    <span class="plus">+{{$value.addition}}</span>
+                  </div>
+                </li>
+                {{/each}}
+                <!-- <li>
+                  <div class="icon"><i class="i-atk"></i></div>
+
+                  <div class="title">攻击力</div>
+                  <div class="weight"></div>
+                  <div class="value">1,962.5</div>
+                  <div class="value2">
+                    <span class="base">1,023.6</span>
+                    <span class="plus">+938.9</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-def"></i></div>
+
+                  <div class="title">防御力</div>
+                  <div class="weight">
+                    <span class="normal">75</span>
+                  </div>
+                  <div class="value">1,328.0</div>
+                  <div class="value2">
+                    <span class="base">826.2</span>
+                    <span class="plus">+501.8</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-speed"></i></div>
+
+                  <div class="title">速度</div>
+                  <div class="weight">
+                     <span class="gold">100</span> 
+                  </div>
+                  <div class="value">145.2</div>
+                  <div class="value2">
+                    <span class="base">104.0</span>
+                    <span class="plus">+41.2</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-cpct"></i></div>
+
+                  <div class="title">暴击率</div>
+                  <div class="weight"></div>
+                  <div class="value">16.7%</div>
+                  <div class="value2">
+                    <span class="base">5.0%</span>
+                    <span class="plus">+11.7%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-cdmg"></i></div>
+
+                  <div class="title">暴击伤害</div>
+                  <div class="weight"></div>
+                  <div class="value">66.8%</div>
+                  <div class="value2">
+                    <span class="base">50.0%</span>
+                    <span class="plus">+16.8%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-dmg"></i></div>
+
+                  <div class="title">伤害加成</div>
+                  <div class="weight"></div>
+                  <div class="value">0.0%</div>
+                  <div class="value2">
+                    <span class="base zero">0.0%</span>
+                    <span class="plus">+0.0%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-stance"></i></div>
+
+                  <div class="title">击破特攻</div>
+                  <div class="weight">
+                    <span class="gold">100</span> 
+                  </div>
+                  <div class="value">180.1%</div>
+                  <div class="value2">
+                    <span class="base zero">0.0%</span>
+                    <span class="plus">+180.1%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-effPct"></i></div>
+
+                  <div class="title">效果命中</div>
+                  <div class="weight"></div>
+                  <div class="value">18.6%</div>
+                  <div class="value2">
+                    <span class="base zero">0.0%</span>
+                    <span class="plus">+18.6%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-effDef"></i></div>
+
+                  <div class="title">效果抵抗</div>
+                  <div class="weight">
+                    <span class="normal">50</span> 
+                  </div>
+                  <div class="value">33.3%</div>
+                  <div class="value2">
+                    <span class="base zero">0.0%</span>
+                    <span class="plus">+33.3%</span>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="icon"><i class="i-heal"></i></div>
+
+                  <div class="title">治疗加成</div>
+                  <div class="weight"></div>
+                  <div class="value">0.0%</div>
+                  <div class="value2">
+                    <span class="base zero">0.0%</span>
+                    <span class="plus">+0.0%</span>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <!-- <div class="char-cons">
+            <div class="cons-item">
+              <div class="talent-icon">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/cons-1.webp)"></div>
+              </div>
+            </div>
+
+            <div class="cons-item">
+              <div class="talent-icon off">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/cons-2.webp)"></div>
+              </div>
+            </div>
+
+            <div class="cons-item">
+              <div class="talent-icon off">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/talent-q.webp)"></div>
+              </div>
+            </div>
+
+            <div class="cons-item">
+              <div class="talent-icon off">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/cons-4.webp)"></div>
+              </div>
+            </div>
+
+            <div class="cons-item">
+              <div class="talent-icon off">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/talent-e.webp)"></div>
+              </div>
+            </div>
+
+            <div class="cons-item">
+              <div class="talent-icon off">
+                <div class="talent-icon-img" style="background-image: url(../../../../../plugins/miao-plugin/resources//meta-sr/character/阮•梅/imgs/cons-6.webp)"></div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+        <div></div>
+      </div>
+
+      <div class="copyright">
+        Created By qqBot-bloniea<span class="version">1.0</span>
+      </div>
+    </div>
+  </body>
+</html>

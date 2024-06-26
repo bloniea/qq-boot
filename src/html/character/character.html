@@ -1,0 +1,209 @@
+<head>
+  <link rel="stylesheet" href="./character.css" />
+</head>
+<div id="player">
+  <div class="juese-bg">
+    <div class="juese-img">
+      <img src="{{hsrUrl}}{{character.portrait}}" alt="" fit />
+    </div>
+    <div class="user">uid:{{ player.uid }} {{ player.nickname }}</div>
+  </div>
+  <div class="content">
+    <!-- <div class="mz">
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>作为一个专注于软件开发的AI助手，我可以建议一些常见的英文名字，但请注意，选择名字是个人的决定，可能会受到许多因素的影响，包括个人喜好、文化背景等。以下是一些英文名字的建议：
+
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>
+          <div class="mz-item">
+            <div class="mask"></div>
+            <div class="image">
+              <img src="./images/mz/SkillIcon_1006_BP.png" alt="" />
+            </div>
+          </div>
+        </div> -->
+    <div class="jueSeShuXing">
+      <div class="title">{{ character.name }}</div>
+      <div class="sub-title">
+        <div>
+          <i class="main-color">0</i> 等级 80/ <i class="main-color">80</i>
+        </div>
+        <div class="sub-icon">
+          <img src="{{ hsrUrl }}{{character.path.icon}}" alt="" />
+        </div>
+        <div class="sub-icon">
+          <img src="{{ hsrUrl }}{{character.element.icon}}" alt="" />
+        </div>
+      </div>
+      <div class="gz">
+        <div class="t">
+          <div class="gz-image">
+            <div class="gz-image-box">
+              <img src="{{ hsrUrl }}{{character.light_cone.portrait}}" alt="" />
+            </div>
+            <div class="gz-image-box1"></div>
+            <div class="gz-image-box2"></div>
+          </div>
+          <div class="gz-shuxing">
+            <div class="gz-title">{{character.light_cone.name}}</div>
+            <div class="gz-subtitle">
+              <i class="main-color"> {{character.light_cone.rank}} </i>
+              等级 {{character.light_cone.level}} /
+              <i class="main-color">80</i>
+            </div>
+            <div class="gz-shuzhi">
+              <div class="gz-shuzhi-item">
+                HP:
+                <i class="main-color">
+                  {{character.light_cone.attributes[0].display}}
+                </i>
+              </div>
+              <div class="gz-shuzhi-item">
+                ATK:
+                <i class="main-color">
+                  {{character.light_cone.attributes[1].display}}
+                </i>
+              </div>
+              <div class="gz-shuzhi-item">
+                DEF:
+                <i class="main-color">
+                  {{character.light_cone.attributes[2].display}}
+                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="b">
+          <div class="gz-desc">
+            <span>技能介绍：</span>
+            <article>
+              使装备者的效果命中提高【24%/28%/32%/36%/40%】。当装备者对同时处于大于等于3个负面效果的敌方目标造成伤害时，暴击率提高【12%/14%/16%/18%/20%】。装备者施放普攻、战技、终结技后，有100%的基础概率对随机1个未持有【以太编码】的受击目标施加【以太编码】。持有【以太编码】的目标受到的伤害提高【12%/14%/16%/18%/20%】，持续1回合。
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="juSeShuZhi">
+      {{each filterCharacter}}
+      <div class="juSeShuZhi-item">
+        <div class="start hp">{{$value.name}}</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> {{$value.sum}}</span>
+          <span class="end-m">
+            {{$value.attribute}}+<i class="green-color"> {{$value.addition}}</i>
+          </span>
+        </div>
+      </div>
+      {{/each}}
+      <!-- <div class="juSeShuZhi-item">
+        <div class="start gjl">攻击力</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start fyl">防御力</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start sd">速度</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start bjl">暴击率</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start bs">暴击伤害</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start jptg">击破特工</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start nlhfl">能量恢复效率</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start xgmz">效果命中</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start xgdk">效果抵抗</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div>
+      <div class="juSeShuZhi-item">
+        <div class="start shjc">量子属性伤害提高</div>
+        <div class="fgx"></div>
+        <div class="end">
+          <span> </span>
+          <span class="end-m">1200+ <i class="green-color">500</i> </span>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <!-- <div class="title">姬子</div>
+      <div class="sub-title">uid 100000000 - Lv.80 <span>0命</span></div> -->
+</div>

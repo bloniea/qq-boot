@@ -1,0 +1,58 @@
+{
+  "name": "qq-boot-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "_moduleAliases": {
+    "@": "./src"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon",
+    "wdev": "nodemon",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/js-yaml": "^4.0.9",
+    "@types/md5": "^2.3.5",
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^20.11.22",
+    "@types/qrcode": "^1.5.5",
+    "@types/qs": "^6.9.15",
+    "@types/ws": "^8.5.10",
+    "esbuild-register": "^3.5.0",
+    "esm": "^3.2.25",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.11",
+    "art-template": "^4.13.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "fetch-blob": "^4.0.0",
+    "form-data": "^4.0.0",
+    "form-data-encoder": "^4.0.2",
+    "formdata-node": "^6.0.3",
+    "formdata-polyfill": "^4.0.10",
+    "ioredis": "^5.3.2",
+    "js-yaml": "^4.1.0",
+    "md5": "^2.3.0",
+    "module-alias": "^2.2.3",
+    "node-fetch": "^3.3.2",
+    "node-fetch-retry": "^2.0.1",
+    "puppeteer": "21.11.0",
+    "qq-guild-bot": "^2.9.5",
+    "qrcode": "^1.5.3",
+    "qs": "^6.12.1",
+    "redis": "^4.6.13",
+    "ws": "^8.16.0"
+  },
+  "type": "module"
+}
