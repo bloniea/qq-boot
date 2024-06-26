@@ -172,7 +172,8 @@ export const getImageUrl = async (
       height: 800,
       deviceScaleFactor: 1,
     })
-    await page.goto(tempFilePath, {
+    const tempFilePathUrl = `file://${tempFilePath}`
+    await page.goto(tempFilePathUrl, {
       waitUntil: "networkidle0",
       // waitUntil: "domcontentloaded",
     })
