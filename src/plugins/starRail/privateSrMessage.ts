@@ -74,12 +74,12 @@ const setMHYcookie = async (
       return
     }
   }
-  console.log("44444")
+
   const res = await getMHYuserInfoApi(uid, cookie)
   if (!res) {
     return client.postPrivateMessage(data.guild_id, {
       msg_id: data.id.toString(),
-      content: "抱歉服务器可能炸了,重试一下吧",
+      content: "网络超时,重试一下吧",
     })
   }
 
@@ -115,7 +115,7 @@ export const setSaveUid = async (data: MessageData) => {
     if (!srInfo) {
       return client.postPrivateMessage(data.guild_id, {
         msg_id: data.id.toString(),
-        content: "抱歉服务器可能炸了,重试一下吧",
+        content: "网络超时,重试一下吧",
       })
     }
     const srUids: UidData[] = []
@@ -125,7 +125,7 @@ export const setSaveUid = async (data: MessageData) => {
         if (!srRes) {
           return client.postPrivateMessage(data.guild_id, {
             msg_id: data.id.toString(),
-            content: "抱歉服务器可能炸了,重试一下吧",
+            content: "网络超时,重试一下吧",
           })
         }
         const obj = {

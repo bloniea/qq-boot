@@ -204,9 +204,9 @@ const setSrUid = async (data: MessageData) => {
       }
       const url = await getImageUrl(options, { uids: uidsArr })
       if (!url) {
-        return client.postPrivateMessage(data.guild_id, {
+        return client.postMessage(data.guild_id, {
           msg_id: data.id.toString(),
-          content: "抱歉服务器可能炸了,重试一下吧",
+          content: "网络超时,重试一下吧",
         })
       }
       return client.postMessageFile(data.channel_id, url, data.id.toString())
@@ -255,7 +255,7 @@ const getTiLi = async (data: MessageData) => {
   const userId = data.author.id
   const ck = await redis.get(`mhy_ck_${userId}`)
   if (!ck) {
-    return await client.postMessage(data.guild_id, {
+    return await client.postMessage(data.channel_id, {
       content: "请先绑定ck,私聊发送 /绑定ck{cooike}",
       msg_id: data.id.toString(),
     })
@@ -370,7 +370,10 @@ const updateStarRailAtlas = async (data: MessageData) => {
     process.cwd(),
     `/src/plugins/starRail/star-rail-atlas/`
   ) // 将 'your-target-folder' 替换为实际的文件夹名称
-
+  await client.postMessage(data.channel_id, {
+    content: "正在更新,请稍后",
+    msg_id: data.id.toString(),
+  })
   try {
     // 进入目标文件夹并执行 git pull 命令
     const { stdout, stderr } = await execAsync(`cd ${targetDir} && git pull`)
