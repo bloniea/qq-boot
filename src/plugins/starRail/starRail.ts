@@ -173,7 +173,7 @@ const setSrUid = async (data: MessageData) => {
   const userId = data.author.id
   const cks = await redis.get(`mhy_ck_${userId}`)
   if (!cks) {
-    return await client.postPrivateMessage(data.guild_id, {
+    return await client.postMessage(data.guild_id, {
       content: "请先绑定ck,请私聊发送 /绑定ck{cooike} ",
       msg_id: data.id.toString(),
     })
@@ -228,7 +228,7 @@ const getMhyCk = async (content: string, data: MessageData) => {
     }
     const cks = await redis.get(`mhy_ck_${userId}`)
     if (!cks) {
-      return await client.postPrivateMessage(data.guild_id, {
+      return await client.postMessage(data.guild_id, {
         content: "请先绑定ck,请私聊发送 /绑定ck{cooike}",
         msg_id: data.id.toString(),
       })
